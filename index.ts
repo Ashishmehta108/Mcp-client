@@ -102,6 +102,7 @@ app.post("/chat", async (req, res) => {
       history of conversation with the user is  : ${JSON.stringify(history)}
       Stop when the required task is completed for eg if user asks to buy a product then stop and give response that product is added to the cart and also recommend similar products and be gentle with the user.
       If you updated something in user cart add,delete,change then in the last messaege of your chain add updated word
+    All the products price is in ruppee currency.Also show images too to the user 
 `;
   const response = await agent.invoke({
     messages: [
