@@ -51,6 +51,10 @@ async function getHistory(userId: string) {
     }));
 }
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.get("/deleteChat/:id", async (req, res) => {
   try {
     const userId = req.params.id;
