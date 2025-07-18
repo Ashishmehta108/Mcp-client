@@ -1,0 +1,134 @@
+[
+  {
+    "id": "cmcracmy40000ovpgm0avuzf6",
+    "name": "avant-garde lamp",
+    "company": "Modenza",
+    "type": "lamp",
+    "areaOfUse": "lighting",
+    "description": "Crafted from hand-blown smoked glass and brushed brass, this avant-garde lamp casts sculptural pools of warm light. Its asymmetrical design and integrated dimmer make it both a centerpiece and a functional reading light in modern interiors.",
+    "featured": true,
+    "image": "https://images.pexels.com/photos/943150/pexels-photo-943150.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price": 100
+  },
+  {
+    "id": "cmcracn5o0001ovpglahonz1p",
+    "name": "chic chair",
+    "company": "Luxora",
+    "type": "chair",
+    "areaOfUse": "seating",
+    "description": "Upholstered in premium velvet with a gentle curve backrest and slender gold-tone legs, this chair blends mid-century elegance with modern comfort. Perfect for a vanity, bedside, or accent seat in your living room.",
+    "featured": true,
+    "image": "https://images.pexels.com/photos/5705090/pexels-photo-5705090.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price": 200
+  },
+  {
+    "id": "cmcracn8y0002ovpgc3m9atzn",
+    "name": "comfy bed",
+    "company": "Homestead",
+    "type": "bed",
+    "areaOfUse": "sleeping",
+    "description": "This queen-size platform bed features a softly padded upholstered headboard in durable linen-blend fabric. Built on a solid hardwood frame, it offers both supportive comfort and under-bed storage for a clutter-free bedroom.",
+    "featured": true,
+    "image": "https://images.pexels.com/photos/1034584/pexels-photo-1034584.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price": 300
+  },
+  {
+    "id": "cmcracnca0003ovpgicbq7e88",
+    "name": "contemporary sofa",
+    "company": "Comfora",
+    "type": "sofa",
+    "areaOfUse": "seating",
+    "description": "A sleek three-seater sofa upholstered in stain-resistant performance fabric. Slim track arms and low-profile legs give it an airy silhouette, while high-density foam cushions ensure long-lasting comfort.",
+    "featured": false,
+    "image": "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price": 400
+  },
+  {
+    "id": "cmcracnfo0004ovpg7pwytdw8",
+    "name": "wooden stool",
+    "company": "FurniCraft",
+    "type": "stool",
+    "areaOfUse": "seating",
+    "description": "A compact and sturdy wooden stool made from premium mango wood. Designed with a natural finish, this versatile piece fits seamlessly in kitchens, study corners, or as a plant stand. Lightweight yet durable, it's perfect for small spaces and everyday use.",
+    "featured": false,
+    "image": "https://m.media-amazon.com/images/I/51eoKWxpEQL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 329
+  },
+  {
+    "id": "cmcracnj40005ovpgyagvs7i7",
+    "name": "metal floor lamp",
+    "company": "Luxora",
+    "type": "lamp",
+    "areaOfUse": "lighting",
+    "description": "This sleek metal floor lamp features a matte black finish and a minimalist silhouette that complements any modern or industrial-style space. Equipped with an adjustable neck and energy-efficient LED compatibility, it's ideal for reading corners, living rooms, or workspaces.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/818yDyo4ciL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 899
+  },
+  {
+    "id": "cmcracnma0006ovpg5evu3ng3",
+    "name": "Wakefit Queen Size Bed",
+    "company": "Wakefit",
+    "type": "bed",
+    "areaOfUse": "sleeping",
+    "description": "Built for durability and comfort, the Wakefit Queen Size Bed features an engineered wood frame with a sleek walnut finish. Designed with a headboard and ample under-bed storage, it pairs perfectly with modern and minimalist bedrooms. Easy to assemble and built to last.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/81ouFuSvc3L._SX425_.jpg",
+    "price": 11999
+  },
+  {
+    "id": "cmcracnpn0007ovpgifbr4bpv",
+    "name": "Sofa-cum-Bed",
+    "company": "UrbanStyle",
+    "type": "sofa-bed",
+    "areaOfUse": "seating & sleeping",
+    "description": "This compact and versatile sofa-cum-bed is perfect for small apartments or guest rooms. Upholstered in soft, breathable fabric with a fold-out design, it easily transforms from a stylish two-seater into a cozy single bed. Ideal for modern urban living without compromising on comfort.",
+    "featured": false,
+    "image": "https://m.media-amazon.com/images/I/81D+rLhAEbL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 3800
+  },
+  {
+    "id": "cmcracnsz0008ovpgd669eg1p",
+    "name": "3-Tier Engineered Wood Storage",
+    "company": "FurniCraft",
+    "type": "storage",
+    "areaOfUse": "organization",
+    "description": "This 3-tier storage unit is crafted from high-quality engineered wood, offering both style and functionality. With a sleek matte finish and compact vertical design, it’s perfect for organizing books, decor items, or office supplies. Ideal for bedrooms, living rooms, or study areas.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/71I7MFJVIRL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 1799
+  },
+  {
+    "id": "cmcracnwb0009ovpgjbvftyzz",
+    "name": "Inflatable Air Sofa",
+    "company": "Comfora",
+    "type": "sofa",
+    "areaOfUse": "seating",
+    "description": "Lightweight, portable, and incredibly comfortable, this inflatable air sofa is perfect for both indoor lounging and outdoor adventures. Made from durable, waterproof PVC material, it inflates in minutes and folds down to a compact size for easy storage and transport.",
+    "featured": false,
+    "image": "https://m.media-amazon.com/images/I/61puZN7r1EL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 2000
+  },
+  {
+    "id": "cmcracnzo000aovpgcsf0750u",
+    "name": "Cushion Lounge",
+    "company": "CozyNest",
+    "type": "lounge",
+    "areaOfUse": "seating",
+    "description": "Designed for ultimate relaxation, this cushion lounge features plush padding and ergonomic support. Upholstered in soft-touch fabric with a minimalist design, it’s perfect for reading, meditating, or adding a cozy touch to any corner of your home.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/61Ljqgsat6L._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 1100
+  },
+  {
+    "id": "cmcraco2z000bovpg320ebv6m",
+    "name": "Wakefit Mattress",
+    "company": "Wakefit",
+    "type": "mattress",
+    "areaOfUse": "sleeping",
+    "description": "Wakefit’s mattress offers optimal support and comfort with its high-density foam, designed to provide a perfect balance between softness and firmness. Ideal for a restful night’s sleep, this mattress also comes with a 7-year warranty for peace of mind. The mattress contours to your body, ensuring a comfortable sleep throughout the night.",
+    "featured": true,
+    "image": "https://images-eu.ssl-images-amazon.com/images/I/9151tnEqRkL._AC_UL165_SR165,165_.jpg",
+    "price": 6500
+  }
+]
