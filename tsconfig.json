@@ -8,6 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "./dist",
     "strict": true
+    , "sourceMap": true,
   },
   "include": ["index.ts", "*.ts", "utils", "embeddings"],
   "exclude": ["node_modules"],

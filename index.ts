@@ -9,6 +9,8 @@ import cors from "cors";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { loadMcpTools } from "@langchain/mcp-adapters";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { prodIndex } from "./utils/pinecone/pinecone.js";
+
 marked.setOptions({ renderer: new (TerminalRenderer as any)() as any });
 const app = express();
 app.use(express.json());
@@ -23,9 +25,14 @@ app.use(
 );
 const mcpClient = new Client({ name: "terminal-client", version: "1.0.0" });
 const transport = new StreamableHTTPClientTransport(
-  new URL(`${process.env.MCP_ENDPOINT}/mcp` || "http://localhost:3001/mcp")
+  new URL(
+    `http://localhost:3001/mcp`
+  )
 );
-await mcpClient.connect(transport);
+await mcpClient.connect(transport)
+ const tools = await loadMcpTools("Bytecraft-mcp", mcpClient);
+  console.log("tools are ",tools)
+;
 const MAX_HISTORY = 50;
 async function addToHistory(userId: string, role: string, text: string) {
   await redis.rPush(userId, JSON.stringify({ role, text }));
@@ -85,25 +92,27 @@ app.post("/chat", async (req, res) => {
   let finalReply = null;
   await addToHistory(userId, "user", query);
   let history = await getHistory(userId);
+  
   const tools = await loadMcpTools("Bytecraft-mcp", mcpClient);
+  console.log("tools are ",tools)
   const agent = createReactAgent({
     llm: gemini,
     tools,
   });
   const systemMessage = `You are a helpful assistant named Aira made by ashish mehta and trained by Google. You are a customer support agent for shopping and the store name is Bytecraft.
 
-      In this conversation, you have to:
-      -Search for product details to tell users about the products.
-      - Help users know product details.
-      - Help them buy based on budget.
-      - Add/remove/view items in the cart without asking for permission.
+        In this conversation, you have to:
+        -Search for product details to tell users about the products.
+        - Help users know product details.
+        - Help them buy based on budget.
+        - Add/remove/view items in the cart without asking for permission.
 
-      User ID is: ${userId}
-      history of conversation with the user is  : ${JSON.stringify(history)}
-      Stop when the required task is completed for eg if user asks to buy a product then stop and give response that product is added to the cart and also recommend similar products and be gentle with the user.
-      If you updated something in user cart add,delete,change then in the last messaege of your chain add updated word
-    All the products price is in ruppee currency.Also show images too to the user 
-`;
+        User ID is: ${userId}
+        history of conversation with the user is  : ${JSON.stringify(history)}
+        Stop when the required task is completed for eg if user asks to buy a product then stop and give response that product is added to the cart and also recommend similar products and be gentle with the user.
+        If you updated something in user cart add,delete,change then in the last messaege of your chain add updated word
+      All the products price is in ruppee currency.Also show images too to the user 
+  `;
   const response = await agent.invoke({
     messages: [
       { role: "system", content: systemMessage },
@@ -125,7 +134,6 @@ setInterval(async () => {
     console.error("Polling error:", error);
   }
 }, 600000);
-
 app.listen(process.env.PORT || 5500, () => {
-  console.log(`Server started on port ${process.env.PORT}`);
+  console.log(`Server started on port ${process.env.PORT} server connected to mcp client`);
 });
