@@ -18,21 +18,18 @@ app.use(
   cors({
     origin: [
       process.env.FRONTEND_URL || "http://localhost:3000",
-      process.env.MCP_CLIENT || "http://localhost:3001",
+      process.env.MCP_ENDPOINT || "http://localhost:3001",
     ],
     credentials: true,
   })
 );
 const mcpClient = new Client({ name: "terminal-client", version: "1.0.0" });
 const transport = new StreamableHTTPClientTransport(
-  new URL(
-    `http://localhost:3001/mcp`
-  )
+  new URL(`${process.env.MCP_ENDPOINT}/mcp` || "http://localhost:3001/mcp")
 );
-await mcpClient.connect(transport)
- const tools = await loadMcpTools("Bytecraft-mcp", mcpClient);
-  console.log("tools are ",tools)
-;
+await mcpClient.connect(transport);
+const tools = await loadMcpTools("Bytecraft-mcp", mcpClient);
+console.log("tools are ", tools);
 const MAX_HISTORY = 50;
 async function addToHistory(userId: string, role: string, text: string) {
   await redis.rPush(userId, JSON.stringify({ role, text }));
@@ -92,9 +89,9 @@ app.post("/chat", async (req, res) => {
   let finalReply = null;
   await addToHistory(userId, "user", query);
   let history = await getHistory(userId);
-  
+
   const tools = await loadMcpTools("Bytecraft-mcp", mcpClient);
-  console.log("tools are ",tools)
+  console.log("tools are ", tools);
   const agent = createReactAgent({
     llm: gemini,
     tools,
@@ -135,5 +132,7 @@ setInterval(async () => {
   }
 }, 600000);
 app.listen(process.env.PORT || 5500, () => {
-  console.log(`Server started on port ${process.env.PORT} server connected to mcp client`);
+  console.log(
+    `Server started on port ${process.env.PORT} server connected to mcp client`
+  );
 });
